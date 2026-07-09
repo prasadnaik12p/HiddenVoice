@@ -25,7 +25,7 @@ export async function GET(request: Request) {
             return Response.json({ success: false, message: "Username is required" }, { status: 400 })
         }
 
-        const result = UsernameQuerySchema.safeParse(queryParam); //it checks if the query parameter is valid according to the usernameValidation schema
+       const result = UsernameQuerySchema.safeParse({ username: queryParam }); //it checks if the query parameter is valid according to the usernameValidation schema
         
         if (!result.success) {
             const usernameErrors = result.error.format().username?._errors || ["Invalid username"];

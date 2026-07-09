@@ -1,9 +1,8 @@
-import { Message } from "@/models/User"  //We are creating this only for type safety
+import { MessageClient } from '@/types/Message';
 
-export interface ApiResponse{
+export interface ApiResponse {
   success: boolean;
-    message: string;
-    isAcceptingMessages?: boolean;
-    messages?:Array<Message>;
+  message: string;
+  isAcceptingMessages?: boolean;
+  messages?: Array<MessageClient>;
 }
-
